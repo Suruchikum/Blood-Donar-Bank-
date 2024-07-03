@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Login and Sign-up Toggle</title>
+    <link rel="stylesheet" href="./css/login.css">
+
+</head>
+
+<body>
+
+    <div class="form-container" id="formContainer">
+        <div class="login-form">
+            <form action="#" id="loginForm">
+                <h1>Login</h1>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <div class="signup-form">
+            <form action="#" id="signupForm">
+                <h1>Sign Up</h1>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+
+        <div class="toggle-option" onclick="toggleForm()">Switch to Sign Up</div>
+    </div>
+
+    <script>
+        function toggleForm() {
+            const formContainer = document.getElementById('formContainer');
+            const loginForm = document.querySelector('.login-form');
+            const signupForm = document.querySelector('.signup-form');
+            const toggleOption = document.querySelector('.toggle-option');
+
+            if (loginForm.style.display === 'block') {
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+                toggleOption.textContent = 'Switch to Login';
+            } else {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+                toggleOption.textContent = 'Switch to Sign Up';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
